@@ -1,2 +1,8 @@
-<% @title = "Show - Tickets - ServiceLog" %>
+<% title(@ticket.number, "Tickets") %>
+<title>
+  <% if content_for?(:title) %>
+    <%= yield(:title) %>
+  <% else %>
+    ServiceLog
+  <% end %>
 <h2><%= @ticket.number %></h2>

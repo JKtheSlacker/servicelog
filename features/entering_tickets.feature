@@ -16,4 +16,4 @@ Feature: Entering tickets
     And I press "Enter Ticket"
     Then I should see "Ticket has been entered."
     And I should be on the ticket page for "51220"
-    And I should see "Show - Tickets - ServiceLog"
+    And I should see "51220 - Tickets - ServiceLog"
