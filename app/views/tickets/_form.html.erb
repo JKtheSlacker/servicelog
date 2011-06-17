@@ -1,0 +1,41 @@
+<%= form_for(@ticket) do |f| %>
+  <p>
+  <%= f.label :number %>
+  <%= f.text_field :number %>
+  </p>
+  <p>
+  <%= f.label :customer %>
+  <%= f.text_field :customer %>
+  </p>
+  <p>
+  <%= f.label :date_in %>
+  <%= f.text_field :date_in %>
+  </p>
+  <p>
+  <%= f.label :in_by %>
+  <%= f.text_field :in_by %>
+  </p>
+  <p>
+  <p>
+  <%= f.label :make %>
+  <%= f.text_field :make %>
+  </p>
+   <p>
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+  </p>
+   <p>
+  <%= f.label :serial %>
+  <%= f.text_field :serial %>
+  </p>
+   <p>
+  <%= f.label :date_out %>
+  <%= f.text_field :date_out %>
+  </p>
+  <p>
+  <%= f.label :out_by %>
+  <%= f.text_field :out_by %>
+  </p>
+  <%= f.submit "Enter Ticket" %>
+<% end %>
+  
