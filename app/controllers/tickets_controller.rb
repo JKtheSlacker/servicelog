@@ -13,4 +13,8 @@ class TicketsController < ApplicationController
     flash[:notice] = "Ticket has been entered."
     redirect_to @ticket
   end
+
+  def show
+    @ticket = Ticket.find(params[:id])
+  end
 end
