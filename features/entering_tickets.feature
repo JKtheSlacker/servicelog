@@ -15,3 +15,5 @@ Feature: Entering tickets
     And I fill in "Serial" with "134107"
     And I press "Enter Ticket"
     Then I should see "Ticket has been entered."
+    And I should be on the ticket page for "51220"
+    And I should see "Show - Tickets- ServiceLog"
