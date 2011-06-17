@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Servicelog</title>
+  <title>ServiceLog</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= yield %>
+  <% flash.each do |key, value| %>
+  <div class='class' id='<%= key %>'>
+    <%= value %>
+  </div>
+  <% end %>
 
 </body>
 </html>
