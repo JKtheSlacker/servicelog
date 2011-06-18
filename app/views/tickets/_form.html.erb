@@ -1,4 +1,5 @@
 <%= form_for(@ticket) do |f| %>
+  <%= f.error_messages %>
   <p>
   <%= f.label :number %>
   <%= f.text_field :number %>
@@ -16,19 +17,18 @@
   <%= f.text_field :in_by %>
   </p>
   <p>
-  <p>
   <%= f.label :make %>
   <%= f.text_field :make %>
   </p>
-   <p>
+  <p>
   <%= f.label :model %>
   <%= f.text_field :model %>
   </p>
-   <p>
+  <p>
   <%= f.label :serial %>
   <%= f.text_field :serial %>
   </p>
-   <p>
+  <p>
   <%= f.label :date_out %>
   <%= f.text_field :date_out %>
   </p>
