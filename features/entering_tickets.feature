@@ -10,7 +10,7 @@ Feature: Entering tickets
   Scenario: Entering a ticket
     And I fill in "Number" with "51220"
     And I fill in "Customer" with "Testington Co Road"
-    And I fill in "Date in" with "06/16/2011"
+    And I fill in "Date in" with "16/06/2011"
     And I fill in "In by" with "JKW"
     And I fill in "Make" with "Midland"
     And I fill in "Model" with "1337"
