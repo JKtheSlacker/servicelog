@@ -5,4 +5,18 @@
   <% else %>
     ServiceLog
   <% end %>
-<h2><%= @ticket.number %></h2>
+</title>
+<%= @ticket.number %>
+<%= @ticket.customer %>
+<%= @ticket.date_in %>
+<%= @ticket.in_by %>
+<%= @ticket.make %>
+<%= @ticket.model %>
+<%= @ticket.serial %>
+<% unless @ticket.date_out.nil? %>
+  <%= @ticket.date_out %>
+  <%= @ticket.out_by %>
+  Ticket Closed
+<% else %>
+  Ticket Open
+<% end %>
