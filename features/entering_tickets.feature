@@ -15,13 +15,13 @@ Feature: Entering tickets
     And I fill in "Make" with "Midland"
     And I fill in "Model" with "1337"
     And I fill in "Serial" with "134107"
-    And I press "Enter Ticket"
+    And I press "Create Ticket"
     Then I should see "Ticket has been entered."
     And I should be on the ticket page for "51220"
     And I should see "51220 - Tickets - ServiceLog"
 
   Scenario: Entering a ticket without information
-    And I press "Enter Ticket"
+    And I press "Create Ticket"
     Then I should see "Ticket has not been entered."
     And I should see "Number can't be blank"
     And I should see "Customer can't be blank"
