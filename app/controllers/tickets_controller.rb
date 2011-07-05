@@ -37,4 +37,18 @@ class TicketsController < ApplicationController
       render :action => "edit"
     end
   end
+
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.customer = "VOID"
+    @ticket.in_by = "VOID"
+    @ticket.make = "VOID"
+    @ticket.model = "VOID"
+    @ticket.serial = "VOID"
+    @ticket.out_by = "VOID"
+    @ticket.date_out = Time.now
+    @ticket.update_attributes(params[:ticket])
+    flash[:notice] = "Ticket has been voided."
+    render :action => "edit"
+  end
 end
