@@ -1,4 +1,8 @@
 class TicketsController < ApplicationController
+  before_filter :find_ticket, :only => [:show,
+    :edit,
+    :update,
+    :destroy]
 
   def index
     @tickets = Ticket.all
@@ -20,15 +24,12 @@ class TicketsController < ApplicationController
   end
 
   def show
-    @ticket = Ticket.find(params[:id])
   end
 
   def edit
-    @ticket = Ticket.find(params[:id])
   end
 
   def update
-    @ticket = Ticket.find(params[:id])
     if @ticket.update_attributes(params[:ticket])
       flash[:notice] = "Ticket has been updated."
       redirect_to @ticket
@@ -39,7 +40,6 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    @ticket = Ticket.find(params[:id])
     @ticket.customer = "VOID"
     @ticket.in_by = "VOID"
     @ticket.make = "VOID"
@@ -49,6 +49,14 @@ class TicketsController < ApplicationController
     @ticket.date_out = Time.now
     @ticket.update_attributes(params[:ticket])
     flash[:notice] = "Ticket has been voided."
+    redirect_to tickets_path
+  end
+
+  private
+  def find_ticket
+    @ticket = Ticket.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    flash[:alert]= "The ticket you were looking for could not be found."
     redirect_to tickets_path
   end
 end
