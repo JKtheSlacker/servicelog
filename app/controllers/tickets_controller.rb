@@ -49,6 +49,6 @@ class TicketsController < ApplicationController
     @ticket.date_out = Time.now
     @ticket.update_attributes(params[:ticket])
     flash[:notice] = "Ticket has been voided."
-    render :action => "edit"
+    redirect_to tickets_path
   end
 end

@@ -9,4 +9,3 @@ Feature: Voiding a ticket
     When I follow "51220"
     And I follow "Void Ticket"
     Then I should see "Ticket has been voided."
-    Then I should not see "Testington County Road"
