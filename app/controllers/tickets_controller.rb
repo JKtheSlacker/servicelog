@@ -29,8 +29,12 @@ class TicketsController < ApplicationController
 
   def update
     @ticket = Ticket.find(params[:id])
-    @ticket.update_attributes(params[:ticket])
-    flash[:notice] = "Ticket has been updated."
-    redirect_to @ticket
+    if @ticket.update_attributes(params[:ticket])
+      flash[:notice] = "Ticket has been updated."
+      redirect_to @ticket
+    else
+      flash[:alert] = "Ticket has not been updated."
+      render :action => "edit"
+    end
   end
 end
